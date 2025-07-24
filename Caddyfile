@@ -1,0 +1,6 @@
+{$SITE_ADDRESS} {
+	@mangos path_regexp mangos_([0-9]+\.[0-9]+\.[0-9]+).(((cyclonedx|github|spdx|syft)\.json)|tar.zst)(\.sigbundle)?$
+	redir @mangos https://github.com/Mastercard/mangos/releases/download/v{re.mangos.1}/{re.mangos.0}
+	root /usr/share/caddy
+	file_server
+}
